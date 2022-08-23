@@ -21,9 +21,10 @@ import java.util.UUID;
 public class OssFileController {
     @PostMapping("/upload")
     public Message upload(@RequestPart("file") MultipartFile file){
-        String endpoint = "https://oss-cn-chengdu.aliyuncs.com";
-        String accessKeyId = "LTAI5tDzLgN8JfcQxPNHJUun";
-        String accessKeySecret = "YTsGltC0PSgyZfT0tLiidht69G7l8D";
+
+        String endpoint = "https://oss-cn-chengdssssu.aliyuncs.com";
+        String accessKeyId = "LTAI5tDzLgN8JfcQxPNHJssssssUun";
+        String accessKeySecret = "YTsGltC0PSsssssssgyZfT0tLssssiidht69G7l8D";
         // 填写Bucket名称，例如examplebucket。
         String bucketName = "huanglongoss";
         // 创建OSSClient实例。
