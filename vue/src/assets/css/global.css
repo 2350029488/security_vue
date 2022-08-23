@@ -1,0 +1,11 @@
+/*在这里写统一的样式*/
+
+*{
+  margin: 0;
+  padding: 0;
+  /*盒模型*/
+  box-sizing: border-box;
+}
+a{
+  text-decoration: none;
+}

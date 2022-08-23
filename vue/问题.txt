@@ -1,0 +1,17 @@
+注意 登录和注册是不需要携带token的
+所以在登录之前需要先把token移除   removeToken(),不移除的话如果跳转登录页面没有移除，再次登录token非法
+在工具类中才不会携带token去后端
+if (getToken()){
+   config.headers['token'] = getToken();
+ }
+
+同时后端需要将登录和注册进行放行
+   // 对于登录接口 允许匿名访问  对于登录请求，就需要把这个请求进行放行
+                .antMatchers("/user/login").anonymous()
+                //注册接口不需要携带token就能访问
+                .antMatchers("/user/register").permitAll()
+
+ 配置了拦截器同样需要进行放行
+  registry.addInterceptor(loginInterceptor).addPathPatterns("/**")
+                /*排除登录和注册*/
+                .excludePathPatterns("/user/login","/user/register");

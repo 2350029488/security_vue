@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--这个文件叫映射文件-->
+<!--约束-->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--接口全路径名-->
+<mapper namespace="com.security.mapper.MenuMapper">
+
+    <!-- 增删改查-->
+    <select id="selectAllParamsByUserId" resultType="java.lang.String">
+        SELECT sv_menu.params FROM
+
+            sv_user LEFT JOIN sv_user_role ON sv_user.id=sv_user_role.user_id
+                    LEFT JOIN sv_role ON sv_user_role.role_id=sv_role.role_id
+                    LEFT JOIN sv_role_menu ON sv_role.role_id=sv_role_menu.role_id
+                    LEFT JOIN sv_menu ON sv_menu.menu_id=sv_role_menu.menu_id
+
+        WHERE sv_user.id=#{id}
+    </select>
+</mapper>
