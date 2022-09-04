@@ -22,11 +22,11 @@ public class OssFileController {
     @PostMapping("/upload")
     public Message upload(@RequestPart("file") MultipartFile file){
 
-        String endpoint = "https://oss-cn-chengdssssu.aliyuncs.com";
-        String accessKeyId = "LTAI5tDzLgN8JfcQxPNHJssssssUun";
-        String accessKeySecret = "YTsGltC0PSsssssssgyZfT0tLssssiidht69G7l8D";
+        String endpoint = "";
+        String accessKeyId = "";
+        String accessKeySecret = "";
         // 填写Bucket名称，例如examplebucket。
-        String bucketName = "huanglongoss";
+        String bucketName = "";
         // 创建OSSClient实例。
         OSS ossClient = new OSSClientBuilder().build(endpoint, accessKeyId, accessKeySecret);
         //创建日期目录
