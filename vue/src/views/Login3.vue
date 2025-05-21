@@ -3,7 +3,7 @@
 
   <div class="container">
     <div class="text" >
-      <div class="login"   >欢迎登录</div>
+      <div class="login"   >欢迎登录吃寿司</div>
       <el-form ref="form" :model="form" label-width="100px"  >
         <el-form-item   >
           <el-input prefix-icon="el-icon-user-solid"
